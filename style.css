@@ -38,6 +38,7 @@ body{
     color: rgb(76, 76, 76);
     font-family: 'Source Sans Pro', sans-serif;
     text-transform: uppercase;
+    padding: 0px;
 }
 
 .top .menu li:first-child{
@@ -62,7 +63,6 @@ body{
 .about{
     display: flex;
     position: relative;
-    flex-wrap: wrap;
     justify-content: space-between;
     margin: 0 auto;
     width: 100%;
@@ -72,6 +72,8 @@ body{
 .about-info{
     flex-direction: column;
     flex-basis: 50%;
+    width: 50%;
+    margin-right: 25px;
 }
 
 
@@ -82,8 +84,6 @@ body{
     font-weight: bold;
     display: inline-block;
     font-size: 32px;
-    margin-bottom: 25px;
-
 }
 
 .about .about-text{
@@ -95,10 +95,15 @@ body{
 .about .about-img{
     display: flex;
     justify-content: flex-end;
-    max-height: 300px;
+    width: 50%;
+    flex-basis: 50%;
+    margin-left: 25px;
+    box-sizing: border-box;
 }
 .about .about-img img{
-    height: 100%;
+    height: max-content;
+    max-height: 300px;
+    width: 100%;
 }
 
 .bottom{
@@ -189,4 +194,50 @@ footer .logos a:last-child{
 footer .logos img{
     width: 30px;
 
+}
+
+@media (max-width: 1000px){
+    .top,.middle,.bottom{
+        margin-bottom: 25px;
+    }
+
+    .about .about-img{
+        display: none;
+    }
+
+    .about-info{
+        width: 100%;
+        margin-right: 0;
+        flex-basis: 100%;
+    }
+}
+
+
+@media (max-width: 900px){
+
+    .top .menu{
+        justify-content: space-around;
+    }
+
+    .top .menu li:first-child,.top .menu li:last-child{
+        margin: 0px;
+    }
+
+    .kitchens{
+        flex-direction: column;
+    }
+
+    .kitchens .kitchen img{
+        width: 150px;
+        height: 150px;
+    }
+
+    .kitchens .kitchen{
+        flex-basis: 150px;
+        margin-bottom: 25px;
+    }
+
+    .kitchens .kitchen .kitchen-name {
+        font-size: 15px;
+    }
 }
